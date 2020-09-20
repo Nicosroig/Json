@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Json</title>
+  </head>
+
+  <body>
+    <ul id="personas"></ul>
+
+    <script>
+      var persona = {
+        nombre: "Juan",
+        apellido: "Romero",
+        edad: 20,
+        nickname: "juanro",
+      };
+
+      var personas = [
+        { nombre: "Fabian", nickname: "fabo" },
+        { nombre: "Maria", nickname: "mara" },
+        { nombre: "Pedro", nickname: "ped" },
+        { nombre: "Juan", nickname: "juano" },
+      ];
+
+      var salida = "";
+
+      for (let i = 0; i < personas.length; i++) {
+        salida += `<li> ${personas[i].nombre} es ${personas[i].nickname} </li>`; //Con interpolation
+        /**
+         *! salida += "<li>" + personas[i].nombre + " es " + personas[i].nickname + "</li>"; */
+      }
+
+      document.getElementById("personas").innerHTML = salida;
+
+      console.log(personas[0].nombre);
+
+      /**
+      ** Hace pedido al servidor
+
+      /* var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          var respuesta = JSON.parse(responseText);
+          console.log(respuesta);
+        }
+      };
+      xhttp.open("GET", "filename", true);
+      xhttp.send();*/
+    </script>
+  </body>
+</html>
